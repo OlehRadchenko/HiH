@@ -8,7 +8,7 @@
 </head>
 <body>
     <header class="flexCenter">
-        <a class="flexCenter" href="index.html">
+        <a class="flexCenter links" href="index.html">
             <svg id="logoSVG" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
                 <ellipse cx="100" cy="50" rx="60" ry="30" fill="lightblue" stroke="navy" stroke-width="2"/>
                 <polygon points="160,20 200,50 160,80" fill="lightblue" stroke="navy" stroke-width="2"/>
@@ -19,32 +19,40 @@
         </a>
     </header>
     <nav class="flexCenter">
-        <a class="navLinks" href="index.html">
-            <section class="navButton">
+        <a class="navLinks links" href="index.html">
+            <p class="navButton flexCenter">
                 Strona główna
-            </section>
+            </p>
         </a>
-        <a class="navLinks" href="polowy.html">
-            <section class="navButton">
+        <a class="navLinks links" href="polowy.html">
+            <p class="navButton flexCenter">
                 Moje połowy
-            </section>
+            </p>
         </a>
-        <a class="navLinks" href="ankieta.html">
-            <section class="navButton">
+        <a class="navLinks links" href="ankieta.html">
+            <p class="navButton flexCenter">
                 Ankieta
-            </section>
+            </p>
         </a>
-        <section id="dropdownMenu">
-            <section class="navButton">
+        <a id="galeriaButton" class="navLinks links">
+            <p class="navButton flexCenter">
                 Galeria
-            </section>   
-        </section>
+            </p>
+            <ul class="dropdown-content">
+                <li><a class="dropdownLink" href="#">Link 1</a></li>
+                <li><a class="dropdownLink" href="#">Link 2</a></li>
+                <li><a class="dropdownLink" href="#">Link 3</a></li>
+            </ul>
+        </a>
     </nav>
     <main>
-            
-    </main>
-    <footer>
 
+    </main>
+    <footer id="stopka" class="flexCenter">
+        <p>
+            Strona wykonana dla projektów z przedmiotów: HiH i WAI przez<br>
+            Oleh'a Radchenko (211352)
+        </p>
     </footer>
 </body>
 </html>

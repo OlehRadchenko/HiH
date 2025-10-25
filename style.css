@@ -21,38 +21,97 @@ header{
 
 header a{
     flex-direction: row;
-    text-decoration: none;
-    color: inherit;
 }
 
 .navButton{
     width: 25vw;
-    height: 15vh;
+    height: 10vh;
     font-size: clamp(3px, 2vw, 30px);
-    padding: 0.5rem 1rem;
 }
 
 .navLinks{
-    background-color: rgb(194, 224, 250);
-    text-align: center;
+    background-color: rgb(176, 215, 248);
+    transition: background-color 0.5s linear;
+    /*border: 1px solid rgb(101, 178, 255);*/
+    box-shadow: inset 0 0 0 1px rgb(101, 178, 255);
+}
+
+.links{
     text-decoration: none;
     color: inherit;
-    transition: background-color 0.5s linear;
 }
 
 .navLinks:hover {
-    background-color: rgb(160, 200, 240);
+    background-color: rgb(136, 180, 224);
     transition: background-color 0.5s linear;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-width: 150px;
+    border-radius: 5px;
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    background-color: #f0f0f0;
+}
+
+#galeriaButton:hover .dropdown-content {
+    display: block;
+}
+
+#stopka{
+    display: flex;
+    height: 8.7vh;
+    align-items: flex-end;
+    background-color: rgb(194, 224, 250);
+    padding-bottom: 0.3vh;
+}
+
+footer p{
+    font-size: 0.5vw;
+}
+
+footer p::first-letter{
+    font-size: 1vw;
+}
+
+footer p::first-line{
+    color:rgb(0, 124, 248);
+}
+
+main{
+    min-height: 70vh;
 }
 
 .flexCenter{
     display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
 @media (max-width: 600px) {
-    /**/
+    nav{
+        flex-direction: column;
+    }
+    .navButton{
+        width: 100vw;
+        height: 2.5vh;
+    }
 }
 
 @keyframes rybkaPlywa {
