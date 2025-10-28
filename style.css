@@ -54,7 +54,7 @@ header a{
     list-style: none;
     margin: 0;
     padding: 0;
-    min-width: 150px;
+    width: 25vw;
     border-radius: 5px;
 }
 
@@ -112,6 +112,17 @@ main{
         width: 100vw;
         height: 2.5vh;
     }
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    border-radius: 5px;
+}
 }
 
 @keyframes rybkaPlywa {
