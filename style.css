@@ -2,6 +2,7 @@
     width: 100vw;
     margin: 0vw;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 #logoSVG {
     position: relative;
@@ -23,6 +24,10 @@ header a{
     flex-direction: row;
 }
 
+header, a{
+    overflow-y: hidden;
+}
+
 .navButton{
     width: 25vw;
     height: 10vh;
@@ -34,6 +39,10 @@ header a{
     transition: background-color 0.5s linear;
     /*border: 1px solid rgb(101, 178, 255);*/
     box-shadow: inset 0 0 0 1px rgb(101, 178, 255);
+}
+
+.actualPage{
+    background-color: rgb(124, 185, 238);
 }
 
 .links{
@@ -60,9 +69,15 @@ header a{
 
 .dropdown-content li a {
     display: block;
-    padding: 10px;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
     color: #333;
     text-decoration: none;
+}
+
+.smallNavButton{
+    width: 25vw;
+    font-size: clamp(1.5px, 1vw, 15px);
 }
 
 .dropdown-content li a:hover {
@@ -73,15 +88,16 @@ header a{
     display: block;
 }
 
-#stopka{
+footer{
     display: flex;
     height: 8.7vh;
     align-items: flex-end;
+    flex-direction: column;
     background-color: rgb(194, 224, 250);
     padding-bottom: 0.3vh;
 }
 
-footer p{
+footer p, footer a{
     font-size: 0.5vw;
 }
 
@@ -103,6 +119,7 @@ main{
     justify-content: center;
     text-align: center;
 }
+/*do użycia :checked + 2 selektory*/
 
 @media (max-width: 600px) {
     nav{
@@ -113,16 +130,13 @@ main{
         height: 2.5vh;
     }
     .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    border-radius: 5px;
-}
+        width: 100vw;
+        border-radius: 5px;
+    }
+    .smallNavButton{
+        width: 100vw;
+        font-size: clamp(3px, 1vw, 15px);
+    }
 }
 
 @keyframes rybkaPlywa {
