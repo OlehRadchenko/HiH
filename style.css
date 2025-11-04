@@ -84,10 +84,6 @@ header, a{
     background-color: #f0f0f0;
 }
 
-#galeriaButton:hover .dropdown-content {
-    display: block;
-}
-
 footer{
     display: flex;
     height: 8.7vh;
@@ -113,6 +109,74 @@ main{
     min-height: 70vh;
 }
 
+table {
+    width: 100%;
+    margin: 2vh auto;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: clamp(5px, 1.5vw, 20px);
+}
+
+table th, table td {
+    border: 1px solid #5aa3e8;
+    padding: 0.8vh 1vw;
+}
+
+table th {
+    background-color: #b8dfff;
+}
+
+table tr:nth-child(even) {
+    background-color: #eef9ff;
+}
+
+#ochronaRyb {
+  width: 90vw;
+  margin: 3vh auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+  line-height: 1.6;
+}
+
+#ochronaRyb h1 {
+  text-align: center;
+  font-size: clamp(18px, 3vw, 36px);
+  color: #0074c7;
+  margin-bottom: 2vh;
+}
+
+#spisTresci {
+  background-color: #e9f5ff;
+  border: 1px solid #b6e0ff;
+  padding: 1.5vh 2vw;
+  border-radius: 10px;
+  margin-bottom: 3vh;
+}
+
+#spisTresci ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#spisTresci li {
+  margin: 0.8vh 0;
+}
+
+#spisTresci a {
+  text-decoration: none;
+  color: #0074c7;
+  transition: color 0.2s ease;
+}
+
+#spisTresci a:hover {
+  color: #005b99;
+}
+
+#ochronaRyb h2 {
+  margin-top: 4vh;
+  color: #005b99;
+}
+
 .flexCenter{
     display: flex;
     align-items: center;
@@ -136,6 +200,36 @@ main{
     .smallNavButton{
         width: 100vw;
         font-size: clamp(3px, 1vw, 15px);
+    }
+    #galeriaButton{
+        /*pointer-events: none;
+        cursor: default;*/
+        /*W TS zrobić:
+        document.addEventListener("DOMContentLoaded", () => {
+  const galeriaButton = document.querySelector("#galeriaButton .navButton") as HTMLAnchorElement;
+  const dropdown = document.querySelector("#galeriaButton .dropdown-content") as HTMLElement;
+
+  if (window.innerWidth <= 600) {
+    // Zablokuj domyślne przejście po kliknięciu
+    galeriaButton.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      // Jeśli menu już otwarte, schowaj je
+      if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+      } else {
+        dropdown.style.display = "block";
+      }
+    });
+  }
+});
+*/
+    }
+}
+
+@media (min-width: 601px) {
+    #galeriaButton:hover .dropdown-content {
+        display: block;
     }
 }
 
