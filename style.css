@@ -1,5 +1,4 @@
 *{
-    width: 100vw;
     margin: 0vw;
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -7,12 +6,14 @@
 #logoSVG {
     position: relative;
     max-width: 10vw;
+    min-height: 10vh;
     animation: rybkaPlywa 6s infinite linear;
 }
 
 #logo{
-    font-size: clamp(5px, 3vw, 45px);
+    font-size: clamp(15px, 3vw, 45px);
     white-space: nowrap;
+    min-width: clamp(150px, 20vw, 600px);
 }
 
 header{
@@ -22,6 +23,7 @@ header{
 
 header a{
     flex-direction: row;
+    gap: clamp(15px, 10vw, 300px);
 }
 
 header, a{
@@ -31,7 +33,7 @@ header, a{
 .navButton{
     width: 25vw;
     height: 10vh;
-    font-size: clamp(3px, 2vw, 30px);
+    font-size: clamp(10px, 2vw, 30px);
 }
 
 .navLinks{
@@ -77,7 +79,7 @@ header, a{
 
 .smallNavButton{
     width: 25vw;
-    font-size: clamp(1.5px, 1vw, 15px);
+    font-size: clamp(4px, 1vw, 15px);
 }
 
 .dropdown-content li a:hover {
@@ -94,11 +96,11 @@ footer{
 }
 
 footer p, footer a{
-    font-size: 0.5vw;
+    font-size: clamp(7px, 0.5vw, 15px);
 }
 
 footer p::first-letter{
-    font-size: 1vw;
+    font-size: clamp(10px, 1vw, 20px);
 }
 
 footer p::first-line{
@@ -114,7 +116,7 @@ table {
     margin: 2vh auto;
     border-collapse: collapse;
     text-align: center;
-    font-size: clamp(5px, 1.5vw, 20px);
+    font-size: clamp(10px, 1.5vw, 20px);
 }
 
 table th, table td {
@@ -131,50 +133,50 @@ table tr:nth-child(even) {
 }
 
 #ochronaRyb {
-  width: 90vw;
-  margin: 3vh auto;
-  font-family: 'Segoe UI', sans-serif;
-  color: #222;
-  line-height: 1.6;
+    width: 90vw;
+    margin: 3vh auto;
+    font-family: 'Segoe UI', sans-serif;
+    color: #222;
+    line-height: 1.6;
 }
 
 #ochronaRyb h1 {
-  text-align: center;
-  font-size: clamp(18px, 3vw, 36px);
-  color: #0074c7;
-  margin-bottom: 2vh;
+    text-align: center;
+    font-size: clamp(18px, 3vw, 36px);
+    color: #0074c7;
+    margin-bottom: 2vh;
 }
 
 #spisTresci {
-  background-color: #e9f5ff;
-  border: 1px solid #b6e0ff;
-  padding: 1.5vh 2vw;
-  border-radius: 10px;
-  margin-bottom: 3vh;
+    background-color: #e9f5ff;
+    border: 1px solid #b6e0ff;
+    padding: 1.5vh 2vw;
+    border-radius: 10px;
+    margin-bottom: 3vh;
 }
 
 #spisTresci ul {
-  list-style-type: none;
-  padding: 0;
+    list-style-type: none;
+    padding: 0;
 }
 
 #spisTresci li {
-  margin: 0.8vh 0;
+    margin: 0.8vh 0;
 }
 
 #spisTresci a {
-  text-decoration: none;
-  color: #0074c7;
-  transition: color 0.2s ease;
+    text-decoration: none;
+    color: #0074c7;
+    transition: color 0.2s ease;
 }
 
 #spisTresci a:hover {
-  color: #005b99;
+    color: #005b99;
 }
 
 #ochronaRyb h2 {
-  margin-top: 4vh;
-  color: #005b99;
+    margin-top: 4vh;
+    color: #005b99;
 }
 
 .flexCenter{
@@ -199,32 +201,32 @@ table tr:nth-child(even) {
     }
     .smallNavButton{
         width: 100vw;
-        font-size: clamp(3px, 1vw, 15px);
+        font-size: clamp(6px, 1vw, 15px);
     }
-    #galeriaButton{
-        /*pointer-events: none;
-        cursor: default;*/
-        /*W TS zrobić:
+    /*#galeriaButton{
+        pointer-events: none;
+        cursor: default;
+        W TS zrobić:
         document.addEventListener("DOMContentLoaded", () => {
-  const galeriaButton = document.querySelector("#galeriaButton .navButton") as HTMLAnchorElement;
-  const dropdown = document.querySelector("#galeriaButton .dropdown-content") as HTMLElement;
+        const galeriaButton = document.querySelector("#galeriaButton .navButton") as HTMLAnchorElement;
+        const dropdown = document.querySelector("#galeriaButton .dropdown-content") as HTMLElement;
 
-  if (window.innerWidth <= 600) {
-    // Zablokuj domyślne przejście po kliknięciu
-    galeriaButton.addEventListener("click", (event) => {
-      event.preventDefault();
+        if (window.innerWidth <= 600) {
+            // Zablokuj domyślne przejście po kliknięciu
+            galeriaButton.addEventListener("click", (event) => {
+            event.preventDefault();
 
-      // Jeśli menu już otwarte, schowaj je
-      if (dropdown.style.display === "block") {
-        dropdown.style.display = "none";
-      } else {
-        dropdown.style.display = "block";
-      }
-    });
-  }
-});
-*/
-    }
+            // Jeśli menu już otwarte, schowaj je
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+            });
+        }
+        });
+        
+    }*/
 }
 
 @media (min-width: 601px) {
