@@ -16,7 +16,7 @@
                 <circle cx="60" cy="45" r="5" fill="white" stroke="black" stroke-width="1"/>
                 <circle cx="60" cy="45" r="2" fill="black"/>
             </svg>
-            <h1 id="logo">WĘDKARTSWO Z PASJĄ</h1>
+            <span id="logo">WĘDKARTSWO Z PASJĄ</span>
         </a>
     </header>
     <nav class="flexCenter">
@@ -35,7 +35,7 @@
                 Ankieta
             </p>
         </a>
-        <section id="galeriaButton" class="navLinks">
+        <div id="galeriaButton" class="navLinks">
             <a class="navButton flexCenter links actualPage" href="galeria.html">
                 Galeria
             </a>
@@ -44,7 +44,7 @@
                 <li><a class="dropdownLink smallNavButton" href="galeria.html#moje_wedki">Moje wędki</a></li>
                 <li><a class="dropdownLink smallNavButton" href="galeria.html#wyprawy">Wyprawy</a></li>
             </ul>
-        </section>
+        </div>
     </nav>
     <main>
         <section id="zlowione_ryby">
@@ -94,7 +94,7 @@
 
         <div id="imageMaxiBlock" class="maxiImageBlock">
             <span class="close">&times;</span>
-            <img class="maxiImage" id="maxiImg">
+            <img class="maxiImage" id="maxiImg" src="img/wedka2_mini.jpg" alt="Powiększone zdjęcie">
             <div id="caption"></div>
         </div>
     </main>
@@ -118,6 +118,7 @@
             imageMaxBlock.style.display = "block";
             maxiImg.src = img.src.replace("_mini", "");
             captionText.textContent = img.alt;
+            maxiImg.alt = img.alt;
             });
         });
 
