@@ -1,4 +1,5 @@
 *{
+    box-sizing: border-box;
     margin: 0vw;
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -12,7 +13,7 @@
 
 #logo{
     font-size: clamp(15px, 3vw, 45px);
-    white-space: nowrap;
+    white-space: wrap;
     min-width: clamp(150px, 20vw, 600px);
 }
 
@@ -140,7 +141,7 @@ table tr:nth-child(even) {
     line-height: 1.6;
 }
 
-#ochronaRyb h1 {
+.title{
     text-align: center;
     font-size: clamp(18px, 3vw, 36px);
     color: #0074c7;
@@ -170,13 +171,13 @@ table tr:nth-child(even) {
     transition: color 0.2s ease;
 }
 
-#spisTresci a:hover {
+#spisTresci a:hover,
+#ochronaRyb h2 {
     color: #005b99;
 }
 
 #ochronaRyb h2 {
     margin-top: 4vh;
-    color: #005b99;
 }
 
 .flexCenter{
@@ -202,6 +203,13 @@ table tr:nth-child(even) {
     .smallNavButton{
         width: 100vw;
         font-size: clamp(6px, 1vw, 15px);
+    }
+    #logo{
+        display: none;
+    }
+    #logoSVG{
+        max-width: clamp(50px ,15vw, 100px);
+        animation: none;
     }
     /*#galeriaButton{
         pointer-events: none;
@@ -247,96 +255,4 @@ table tr:nth-child(even) {
     80%  { transform: translate(8vw, 0); }
     90%  { transform: translate(9vw, -0.5vh); }
     100% { transform: translate(0, 0); }
-}
-
-form {
-    width: 60%;
-    margin: 3vh auto;
-    padding: 2vh 2vw;
-    background-color: rgb(194, 224, 250);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 1.5vh;
-}
-
-form h2 {
-    text-align: center;
-    font-size: clamp(12px, 2vw, 28px);
-    color: rgb(0, 80, 160);
-    margin-bottom: 2vh;
-}
-
-label {
-    font-weight: bold;
-    color: rgb(40, 70, 100);
-    font-size: clamp(8px, 1vw, 16px);
-}
-
-input[type="text"],
-input[type="email"],
-input[type="date"],
-textarea,
-select {
-    width: 100%;
-    padding: 0.7vh 0.5vw;
-    border: 1px solid rgb(150, 190, 230);
-    border-radius: 5px;
-    font-size: clamp(8px, 1vw, 16px);
-    transition: 0.3s ease;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus,
-select:focus,
-input[type="date"]:focus {
-    outline: none;
-    border-color: rgb(0, 124, 248);
-    box-shadow: 0 0 5px rgba(0, 124, 248, 0.3);
-}
-
-textarea {
-    resize: vertical;
-    min-height: 80px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5vh;
-}
-
-.radio-group, .checkbox-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1vw;
-    margin-top: 0.5vh;
-}
-
-.radio-group label,
-.checkbox-group label {
-    font-weight: normal;
-}
-
-.form-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 2vw;
-    margin-top: 2vh;
-}
-
-button, input[type="reset"], input[type="submit"] {
-    background-color: rgb(176, 215, 248);
-    border: none;
-    border-radius: 6px;
-    padding: 0.8vh 2vw;
-    font-size: clamp(8px, 1vw, 16px);
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-}
-
-button:hover, input[type="reset"]:hover, input[type="submit"]:hover {
-    background-color: rgb(136, 180, 224);
 }

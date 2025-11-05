@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="stylesheet" href="survey_style.css">
     <title>Ankieta</title>
 </head>
 <body>
@@ -46,77 +47,65 @@
         </section>
     </nav>
     <main>
-        <!--Pytania do ankiety(o preferencje wędkarza)
-            Imie, nazwisko, email
-            ulubiony gatunbek ryby(radio button)
-            ulubiony rodzaj łowiska(lista rozwijana)
-            sprzęt który posiada(checkboxy)
-            Komentarz ogólny(textarea)
-            data ostatniego połowu
-            przuciski wyczyść i wyślij-->
-            <h2>Ankieta o preferencjach wędkarskich</h2>
-            <form action="ankieta.php" method="post">
-                <fieldset>
-                    <legend>Dane wędkarza</legend>
+        <h1 class="title">Ankieta o preferencjach wędkarskich</h1>
+        <form action="ankieta.php" method="post">
+            <fieldset>
+                <legend>Dane wędkarza</legend>
+                <label for="imie">Imię:</label>
+                <input type="text" id="imie" name="imie" required>
+                <label for="nazwisko">Nazwisko:</label>
+                <input type="text" id="nazwisko" name="nazwisko" required>
+                <label for="email">Adres e-mail:</label>
+                <input type="email" id="email" name="email" placeholder="przyklad@poczta.pl" required>
+            </fieldset>
 
-                    <label for="imie">Imię:</label>
-                    <input type="text" id="imie" name="imie" required>
+            <fieldset class="radio-group">
+                <legend>Ulubiony gatunek ryby</legend>
+                <label><input type="radio" name="gatunek" value="szczupak" required> Szczupak</label>
+                <label><input type="radio" name="gatunek" value="okoń"> Okoń</label>
+                <label><input type="radio" name="gatunek" value="karp"> Karp</label>
+                <label><input type="radio" name="gatunek" value="sandacz"> Sandacz</label>
+            </fieldset>
 
-                    <label for="nazwisko">Nazwisko:</label>
-                    <input type="text" id="nazwisko" name="nazwisko" required>
+            <fieldset>
+                <legend>Ulubiony rodzaj łowiska</legend>
+                <label for="lowisko">Wybierz rodzaj:</label>
+                <select id="lowisko" name="lowisko" required>
+                    <option value="">-- wybierz --</option>
+                    <option value="jezioro">Jezioro</option>
+                    <option value="rzeka">Rzeka</option>
+                    <option value="staw">Staw prywatny</option>
+                    <option value="morze">Morze</option>
+                    <option value="ocean">Ocean</option>
+                </select>
+            </fieldset>
 
-                    <label for="email">Adres e-mail:</label>
-                    <input type="email" id="email" name="email" placeholder="przyklad@poczta.pl" required>
-                </fieldset>
+            <fieldset class="checkbox-group">
+                <legend>Posiadany sprzęt</legend>
+                <label><input type="checkbox" name="sprzet" value="wedka"> Wędka</label>
+                <label><input type="checkbox" name="sprzet" value="kolowrotek"> Kołowrotek</label>
+                <label><input type="checkbox" name="sprzet" value="siatka"> Siatka</label>
+                <label><input type="checkbox" name="sprzet" value="przynety"> Przynęty</label>
+                <label><input type="checkbox" name="sprzet" value="echosonda"> Echosonda</label>
+            </fieldset>
 
-                <fieldset>
-                    <legend>Ulubiony gatunek ryby</legend>
-                    <label><input type="radio" name="gatunek" value="szczupak" required> Szczupak</label>
-                    <label><input type="radio" name="gatunek" value="okoń"> Okoń</label>
-                    <label><input type="radio" name="gatunek" value="karp"> Karp</label>
-                    <label><input type="radio" name="gatunek" value="sandacz"> Sandacz</label>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Ulubiony rodzaj łowiska</legend>
-                    <label for="lowisko">Wybierz rodzaj:</label>
-                    <select id="lowisko" name="lowisko" required>
-                        <option value="">-- wybierz --</option>
-                        <option value="jezioro">Jezioro</option>
-                        <option value="rzeka">Rzeka</option>
-                        <option value="staw">Staw prywatny</option>
-                        <option value="morze">Morze</option>
-                        <option value="ocean">Ocean</option>
-                    </select>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Posiadany sprzęt</legend>
-                    <label><input type="checkbox" name="sprzet" value="wedka"> Wędka</label>
-                    <label><input type="checkbox" name="sprzet" value="kolowrotek"> Kołowrotek</label>
-                    <label><input type="checkbox" name="sprzet" value="siatka"> Siatka</label>
-                    <label><input type="checkbox" name="sprzet" value="przynety"> Przynęty</label>
-                    <label><input type="checkbox" name="sprzet" value="echosonda"> Echosonda</label>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Komentarz ogólny</legend>
-                    <label for="komentarz">Twoje uwagi:</label><br>
-                    <textarea id="komentarz" name="komentarz" rows="4" cols="50" placeholder="Podziel się swoją opinią..."></textarea>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Data ostatniego połowu</legend>
-                    <label for="dataPolowu">Wybierz datę:</label>
-                    <input type="date" id="dataPolowu" name="dataPolowu">
-                </fieldset>
-
-                <div class="buttons">
-                    <button type="reset" class="form-buttons">Wyczyść</button>
-                    <button type="submit" class="form-buttons">Wyślij</button>
-                </div>
-
-            </form>
+            <fieldset>
+                <legend>Komentarz ogólny</legend>
+                <label for="komentarz">Twoje uwagi:</label><br>
+                <textarea id="komentarz" name="komentarz" rows="4" cols="50" placeholder="Podziel się swoją opinią..."></textarea>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Data ostatniego połowu</legend>
+                <label for="dataPolowu">Wybierz datę:</label>
+                <input type="date" id="dataPolowu" name="dataPolowu">
+            </fieldset>
+            
+            <div class="form-buttons">
+                <button type="reset">Wyczyść</button>
+                <button type="submit">Wyślij</button>
+            </div>
+        </form>
     </main>
     <footer class="flexCenter">
         <a href="https://pzw.pl/" target="_blank">Polski Związek Wędkarski</a>
