@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="wedkarstwo" type="wedkarstwoType"/>
+
+    <xs:complexType name="wedkarstwoType">
+        <xs:sequence>
+            <xs:element name="wedkarze" type="wedkarzeType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="wedkarzeType">
+        <xs:sequence>
+            <xs:element name="wedkarz" type="wedkarzType" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="kraj" type="xs:string" use="required"/>
+        <xs:attribute name="rok" type="xs:gYear" use="required"/>
+        <xs:attribute name="liczba" type="xs:positiveInteger" use="required"/>
+    </xs:complexType>
+</xs:schema>
+
+<!--
+        <xs:element name="kontakt">
+          <xs:complexType>
+            <xs:group ref="daneKontaktowe"/>
+          </xs:complexType>
+        </xs:element>
+         <xs:group name="daneKontaktowe">
+            <xs:sequence>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="telefon" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:group>
+        
+
+        <xs:simpleType name="listaGatunkow">
+            <xs:list>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="szczupak"/>
+                        <xs:enumeration value="karp"/>
+                        <xs:enumeration value="okoń"/>
+                        <xs:enumeration value="sandacz"/>
+                        <xs:enumeration value="leszcz"/>
+                    </xs:restriction>
+                    <xs:maxLength value="3"/>
+                </xs:simpleType>
+            </xs:list>
+        </xs:simpleType>
+        <xs:element name="gatunki" type="listaGatunkow"/>
+
+
+        ref example
+        <xs:attribute name="id" type="xs:integer"/>
+        <xs:element name="wedkarz">
+            <xs:complexType>
+            <xs:attribute ref="id"/>
+            <xs:attribute name="imie" type="xs:string"/>
+            </xs:complexType>
+        </xs:element>
+
+        <xs:element name="autor" type="xs:string"/>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="autor"/>
+                <xs:element name="tytul" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+
+
+        ROZSZERZENIE TYPE EXAMPLE
+        <xs:complexType name="osobaType">
+            <xs:sequence>
+            <xs:element name="imie" type="xs:string"/>
+            <xs:element name="nazwisko" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="wedkarzType">
+            <xs:complexContent>
+            <xs:extension base="osobaType">
+                <xs:sequence>
+                <xs:element name="poziom_uprawnien" type="xs:string"/>
+                <xs:element name="ilosc_zlowionych_ryb" type="xs:integer"/>
+                </xs:sequence>
+                <xs:attribute name="id" type="xs:integer"/>
+            </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+
+
+        UNION EXAMPLE
+        <xs:simpleType name="typCm">
+            <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="200"/>
+            </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType name="typOpisowy">
+            <xs:restriction base="xs:string">
+            <xs:enumeration value="NIEZNANY"/>
+            <xs:enumeration value="REKORD"/>
+            <xs:enumeration value="BRAK DANYCH"/>
+            </xs:restriction>
+        </xs:simpleType>
+
+        <xs:simpleType name="rozmiarUnion">
+            <xs:union memberTypes="typCm typOpisowy"/>
+        </xs:simpleType>
+        -->

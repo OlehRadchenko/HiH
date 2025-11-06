@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wedkarstwo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="fishing.xsd">
+
+    <wedkarze kraj="Polska" rok="2025" liczba="3">
+        <wedkarz id="w1" doswiadczenie="średnie" klub="Koło Gdańskie">
+            <dane>
+                <imie>Oleh</imie>
+                <nazwisko>Radchenko</nazwisko>
+                <wiek>19 lat</wiek>
+                <kontakt>
+                    <email>oleh.radchenko@example.com</email>
+                    <telefon>+48 123 456 789</telefon>
+                </kontakt>
+            </dane>
+
+            <sprzet>
+                <wedka typ="spinning" marka="Shimano" dlugosc="2.7m"/>
+                <kolowrotek marka="Daiwa" model="Revros 2500"/>
+                <zylka grubosc="0.20mm" wytrzymalosc="6kg"/>
+            </sprzet>
+
+            <polowy>
+                <polow data="2025-07-12" miejsce="Jezioro Żarnowieckie" pogoda="słoneczna">
+                    <gatunek rodzaj="drapieżna">Szczupak</gatunek>
+                    <dlugosc jednostka="cm">68</dlugosc>
+                    <waga jednostka="kg">2.5</waga>
+                    <zdjecie src="images/szczupak1.jpg" opis="Pierwszy połów lata"/>
+                    <link href="https://pl.wikipedia.org/wiki/Szczupak_pospolity"/>
+                </polow>
+
+                <polow data="2025-08-02" miejsce="Rzeka Wisła" pogoda="pochmurna">
+                    <gatunek rodzaj="drapieżna">Sandacz</gatunek>
+                    <dlugosc jednostka="cm">54</dlugosc>
+                    <waga jednostka="kg">1.9</waga>
+                    <zdjecie src="images/sandacz1.jpg" opis="Sandacz z Wisły"/>
+                    <link href="https://pl.wikipedia.org/wiki/Sandacz"/>
+                </polow>
+
+                <polow data="2025-09-18" miejsce="Jezioro Łebsko" pogoda="wiatr">
+                    <gatunek rodzaj="biała ryba">Okoń</gatunek>
+                    <dlugosc jednostka="cm">25</dlugosc>
+                    <waga jednostka="kg">0.3</waga>
+                    <zdjecie src="images/okon1.jpg" opis="Okoń z wrześniowego połowu"/>
+                    <link href="https://pl.wikipedia.org/wiki/Oko%C5%84"/>
+                </polow>
+            </polowy>
+        </wedkarz>
+
+        <wedkarz id="w2" doswiadczenie="początkujący" klub="Koło Warszawskie">
+            <dane>
+                <imie>Anna</imie>
+                <nazwisko>Kowalska</nazwisko>
+                <wiek>23 lata</wiek>
+                <kontakt>
+                    <email>anna.kowalska@example.com</email>
+                    <telefon>+48 123 456 791</telefon>
+                </kontakt>
+            </dane>
+            <sprzet>
+                <wedka typ="spławik" marka="Mikado" dlugosc="3.6m"/>
+                <kolowrotek marka="Okuma" model="Trio 30"/>
+                <zylka grubosc="0.18mm" wytrzymalosc="5kg"/>
+            </sprzet>
+            <polowy>
+                <polow data="2025-06-20" miejsce="Jezioro Druzno" pogoda="deszczowa">
+                    <gatunek rodzaj="biała ryba">Leszcz</gatunek>
+                    <dlugosc jednostka="cm">33</dlugosc>
+                    <waga jednostka="kg">0.7</waga>
+                    <zdjecie src="images/leszcz.jpg" opis="Połów w deszczu"/>
+                    <link href="https://pl.wikipedia.org/wiki/Leszcz_pospolity"/>
+                </polow>
+            </polowy>
+        </wedkarz>
+
+        <wedkarz id="w3" doswiadczenie="zaawansowane" klub="Koło Poznańskie">
+            <dane>
+                <imie>Marek</imie>
+                <nazwisko>Nowak</nazwisko>
+                <wiek>35 lat</wiek>
+                <kontakt>
+                    <email>marek.nowak@example.com</email>
+                    <telefon>+48 123 456 790</telefon>
+                </kontakt>
+            </dane>
+            <sprzet>
+                <wedka typ="gruntowa" marka="Dragon" dlugosc="3.9m"/>
+                <kolowrotek marka="Penn" model="Battle III 4000"/>
+                <zylka grubosc="0.25mm" wytrzymalosc="8kg"/>
+            </sprzet>
+            <polowy>
+                <polow data="2025-07-01" miejsce="Rzeka Odra" pogoda="słoneczna">
+                    <gatunek rodzaj="drapieżna">Sum</gatunek>
+                    <dlugosc jednostka="cm">105</dlugosc>
+                    <waga jednostka="kg">12.0</waga>
+                    <zdjecie src="images/sum.jpg" opis="Rekordowy sum z Odry"/>
+                    <link href="https://pl.wikipedia.org/wiki/Sum_pospolity"/>
+                </polow>
+            </polowy>
+        </wedkarz>
+    </wedkarze>
+
+</wedkarstwo>
