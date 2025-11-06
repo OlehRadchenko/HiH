@@ -2,100 +2,348 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
     <xs:element name="wedkarstwo" type="wedkarstwoType"/>
+    <xs:attribute name="kraj" type="xs:string"/>
+    <xs:element name="wedkarz" type="wedkarzType"/>
+    
+    <xs:group name="daneGroup">
+        <xs:sequence>
+            <xs:element name="imie">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="30"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="nazwisko">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="wiek" type="wiekType"/>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:element name="dane">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:group ref="daneGroup"/>
+                <xs:element name="kontakt">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="email">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                    <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="telefon" type="telefonType" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:attributeGroup name="wedkarzeGroup">
+        <xs:attribute name="id" type="idType" use="required"/>
+        <xs:attribute name="doswiadczenie" type="doswiadczenieType" use="required"/>
+        <xs:attribute name="klub" type="xs:string" use="required"/>
+    </xs:attributeGroup>
 
     <xs:complexType name="wedkarstwoType">
-        <xs:sequence>
-            <xs:element name="wedkarze" type="wedkarzeType" maxOccurs="unbounded"/>
-        </xs:sequence>
+        <xs:choice maxOccurs="unbounded">
+            <xs:element name="wedkarze" type="wedkarzeType"/>
+            <xs:element name="zawody" type="zawodyType"/>
+        </xs:choice>
     </xs:complexType>
 
     <xs:complexType name="wedkarzeType">
         <xs:sequence>
-            <xs:element name="wedkarz" type="wedkarzType" maxOccurs="unbounded"/>
+            <xs:element ref="wedkarz" maxOccurs="unbounded"/>
         </xs:sequence>
-        <xs:attribute name="kraj" type="xs:string" use="required"/>
+        <xs:attribute ref="kraj" use="required"/>
         <xs:attribute name="rok" type="xs:gYear" use="required"/>
         <xs:attribute name="liczba" type="xs:positiveInteger" use="required"/>
     </xs:complexType>
+
+    <xs:complexType name="wedkarzType">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element ref="dane" maxOccurs="1"/>
+            <xs:element name="sprzet" type="sprzetType"/>
+            <xs:element name="polowy" type="polowyType" maxOccurs="1"/>
+        </xs:choice>
+        <xs:attributeGroup ref="wedkarzeGroup"/>
+    </xs:complexType>
+
+    <xs:complexType name="sprzetType">
+        <xs:all>
+            <xs:element name="wedka">
+                <xs:complexType>
+                    <xs:attribute name="typ" type="xs:string" use="required"/>
+                    <xs:attribute name="marka" type="xs:string" use="required"/>
+                    <xs:attribute name="dlugosc" type="xs:string" use="required"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="kolowrotek">
+                <xs:complexType>
+                    <xs:attribute name="marka" type="xs:string" use="required"/>
+                    <xs:attribute name="model" type="xs:string" use="required"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="zylka">
+                <xs:complexType>
+                    <xs:attribute name="grubosc" type="xs:string" use="required"/>
+                    <xs:attribute name="wytrzymalosc" type="xs:string" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="polowyType">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element name="polow" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="gatunek" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:string">
+                                        <xs:attribute name="rodzaj" type="rodzajType" use="required"/>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <!-- TU TRZEBA DOROBIĆ ŁATWE RZECZY -->
+                        <xs:element name="zdjecie" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:attribute name="src" type="xs:string" use="required"/>
+                                <xs:attribute name="opis" type="xs:string" use="optional"/>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="lowisko" type="lowiskoType" maxOccurs="1"/>
+                        <xs:element name="opisPolowu" type="opisType" maxOccurs="1"/>
+                    </xs:sequence>
+                    <xs:attribute name="data" type="xs:date" use="required"/>
+                    <xs:attribute name="miejsce" type="xs:string" use="required"/>
+                    <xs:attribute name="pogoda" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="lowiskoType">
+        <xs:choice>
+            <xs:element name="rzeka">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="link" type="xs:anyURI" use="optional"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="jezioro">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="link" type="xs:anyURI" use="optional"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="morze">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="link" type="xs:anyURI" use="optional"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:simpleType name="rodzajType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ryba drapieżna"/>
+            <xs:enumeration value="ryba biała"/>
+            <xs:enumeration value="ryba denna"/>
+            <xs:enumeration value="ryba roślinożerna"/>
+            <xs:enumeration value="biała planktonożerna"/>
+            <xs:enumeration value="ryba wszystkożerna"/>
+            <xs:enumeration value="ryba wędrowna"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="opisType" mixed="true">
+        <xs:sequence>
+            <xs:element name="miejsce" type="xs:string" minOccurs="0"/>
+            <xs:element name="gatunek" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="doswiadczenieType">
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="początkujący"/>
+                <xs:enumeration value="średniozaawansowany"/>
+                <xs:enumeration value="zaawansowany"/>
+                <xs:enumeration value="ekspert"/>
+                <xs:enumeration value="profesjonalista"/>
+            </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="idType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="w[ ]?[0-9]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="wiekType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(1[01][0-9]|120|[1-9][0-9]?)[ ]?(rok|lata|lat)"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="telefonType">
+        <xs:restriction base="xs:string">
+        <xs:pattern value="(\+48)?[ ]?\d{3}[ -]?\d{3}[ -]?\d{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="zawodyType">
+        <xs:all>
+            <xs:element name="organizator" type="organizatorType"/>
+            <xs:element name="uczestnicy">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="uczestnik" minOccurs="1" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:group ref="daneGroup" maxOccurs="1"/>
+                                </xs:sequence>
+                                <xs:attributeGroup ref="wedkarzeGroup"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="wyniki" type="wynikiType"/>
+            <xs:element name="galeria" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="zdjecie" minOccurs="1" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:attribute name="src" type="xs:string" use="required"/>
+                                <xs:attribute name="opis" type="xs:string" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="linki" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="link" minOccurs="1" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:anyURI">
+                                        <xs:attribute name="typ" type="xs:string" use="required"/>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+        <xs:attribute ref="kraj" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="organizatorType">
+        <xs:attribute name="nazwa" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="100"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="kontakt" type="telefonType" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="wynikiType">
+        <xs:sequence>
+            <xs:element name="pozycja" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:all>
+                        <xs:element name="uczestnikRef">
+                            <xs:complexType>
+                                <xs:attribute name="id" type="idType" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="zlowioneRyby" type="zlowioneRybyType"/>
+                    </xs:all>
+                    <xs:attribute name="miejsce" use="required">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:positiveInteger">
+                                <xs:minInclusive value="1" fixed="true"/>
+                                <xs:maxInclusive value="10"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attribute name="punkty" type="xs:positiveInteger" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="zlowioneRybyType"> 
+        <xs:list>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="szczupak"/>
+                    <xs:enumeration value="karp"/>
+                    <xs:enumeration value="okoń"/>
+                    <xs:enumeration value="sandacz"/>
+                    <xs:enumeration value="leszcz"/>
+                    <xs:enumeration value="sum"/>
+                    <xs:enumeration value="lin"/>
+                    <xs:enumeration value="amur"/>
+                    <xs:enumeration value="płoć"/>
+                    <xs:enumeration value="brzana"/>
+                    <xs:enumeration value="jaź"/>
+                    <xs:enumeration value="kleń"/>
+                    <xs:enumeration value="troć"/>
+                    <xs:enumeration value="łosoś"/>
+                    <xs:enumeration value="węgorz"/>
+                    <xs:enumeration value="pstrąg"/>
+                    <xs:enumeration value="miętus"/>
+                    <xs:enumeration value="ukleja"/>
+                    <xs:enumeration value="krąp"/>
+                    <xs:enumeration value="karaś"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:list>
+    </xs:simpleType> 
+
 </xs:schema>
 
 <!--
-        <xs:element name="kontakt">
-          <xs:complexType>
-            <xs:group ref="daneKontaktowe"/>
-          </xs:complexType>
-        </xs:element>
-         <xs:group name="daneKontaktowe">
-            <xs:sequence>
-            <xs:element name="email" type="xs:string"/>
-            <xs:element name="telefon" type="xs:string" minOccurs="0"/>
-            </xs:sequence>
-        </xs:group>
-        
-
-        <xs:simpleType name="listaGatunkow">
-            <xs:list>
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:enumeration value="szczupak"/>
-                        <xs:enumeration value="karp"/>
-                        <xs:enumeration value="okoń"/>
-                        <xs:enumeration value="sandacz"/>
-                        <xs:enumeration value="leszcz"/>
-                    </xs:restriction>
-                    <xs:maxLength value="3"/>
-                </xs:simpleType>
-            </xs:list>
-        </xs:simpleType>
-        <xs:element name="gatunki" type="listaGatunkow"/>
-
-
-        ref example
-        <xs:attribute name="id" type="xs:integer"/>
-        <xs:element name="wedkarz">
-            <xs:complexType>
-            <xs:attribute ref="id"/>
-            <xs:attribute name="imie" type="xs:string"/>
-            </xs:complexType>
-        </xs:element>
-
-        <xs:element name="autor" type="xs:string"/>
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="autor"/>
-                <xs:element name="tytul" type="xs:string"/>
-            </xs:sequence>
-        </xs:complexType>
-
-
-        ROZSZERZENIE TYPE EXAMPLE
-        <xs:complexType name="osobaType">
-            <xs:sequence>
-            <xs:element name="imie" type="xs:string"/>
-            <xs:element name="nazwisko" type="xs:string"/>
-            </xs:sequence>
-        </xs:complexType>
-        <xs:complexType name="wedkarzType">
-            <xs:complexContent>
-            <xs:extension base="osobaType">
-                <xs:sequence>
-                <xs:element name="poziom_uprawnien" type="xs:string"/>
-                <xs:element name="ilosc_zlowionych_ryb" type="xs:integer"/>
-                </xs:sequence>
-                <xs:attribute name="id" type="xs:integer"/>
-            </xs:extension>
-            </xs:complexContent>
-        </xs:complexType>
-
-
         UNION EXAMPLE
-        <xs:simpleType name="typCm">
+        <xs:simpleType name="jednostkaType">
             <xs:restriction base="xs:integer">
             <xs:minInclusive value="1"/>
             <xs:maxInclusive value="200"/>
             </xs:restriction>
         </xs:simpleType>
-        <xs:simpleType name="typOpisowy">
+        <xs:simpleType name="opisType">
             <xs:restriction base="xs:string">
             <xs:enumeration value="NIEZNANY"/>
             <xs:enumeration value="REKORD"/>
@@ -104,6 +352,13 @@
         </xs:simpleType>
 
         <xs:simpleType name="rozmiarUnion">
-            <xs:union memberTypes="typCm typOpisowy"/>
+            <xs:union memberTypes="jednostkaType opisType"/>
         </xs:simpleType>
+
+        <xs:simpleType name="WiekType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="120"/>
+        </xs:restriction>
+        </xs:simpleType>  DLA KILO RYB
         -->
