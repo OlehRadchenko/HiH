@@ -2,6 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
     <xs:element name="wedkarstwo" type="wedkarstwoType"/>
+
     <xs:attribute name="kraj" type="xs:string"/>
     <xs:element name="wedkarz" type="wedkarzType"/>
 
@@ -107,7 +108,7 @@
         <xs:choice maxOccurs="unbounded">
             <xs:element name="polow" maxOccurs="unbounded">
                 <xs:complexType>
-                    <xs:choice maxOccurs="unbounded"> <!-- ALBO LEPIEJ SEQUENCE? -->
+                    <xs:sequence>
                         <xs:element name="gatunek">
                             <xs:complexType>
                                 <xs:simpleContent>
@@ -120,9 +121,9 @@
                         <xs:element name="dlugoscNajwiekszejRyby">
                             <xs:complexType>
                                 <xs:simpleContent>
-                                    <xs:extension base="xs:positiveInteger">
-                                        <xs:attribute name="jednostka" type="jednostkaDlugosciType" use="required"/>
-                                        <xs:attribute name="gatunek" type="xs:string" use="required"/>
+                                    <xs:extension base="rozmiarUnion">
+                                        <xs:attribute name="jednostka" type="jednostkaDlugosciType"/>
+                                        <xs:attribute name="gatunek" type="xs:string"/>
                                     </xs:extension>
                                 </xs:simpleContent>
                             </xs:complexType>
@@ -130,9 +131,9 @@
                         <xs:element name="wagaNajwiekszejRyby">
                             <xs:complexType>
                                 <xs:simpleContent>
-                                    <xs:extension base="xs:decimal">
-                                        <xs:attribute name="jednostka" type="jednostkaWagiType" use="required"/>
-                                        <xs:attribute name="gatunek" type="xs:string" use="required"/>
+                                    <xs:extension base="rozmiarUnion">
+                                        <xs:attribute name="jednostka" type="jednostkaWagiType"/>
+                                        <xs:attribute name="gatunek" type="xs:string"/>
                                     </xs:extension>
                                 </xs:simpleContent>
                             </xs:complexType>
@@ -145,7 +146,7 @@
                         </xs:element>
                         <xs:element name="lowisko" type="lowiskoType" maxOccurs="1"/>
                         <xs:element name="opisPolowu" type="opisType" maxOccurs="1"/>
-                    </xs:choice>
+                    </xs:sequence>
                     <xs:attribute name="data" type="xs:date" use="required"/>
                     <xs:attribute name="miejsce" type="xs:string" use="required"/>
                     <xs:attribute name="pogoda" type="xs:string"/>
@@ -188,6 +189,23 @@
         </xs:choice>
     </xs:complexType>
 
+    <xs:simpleType name="cyfrowaWartoscType">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0.000001"/>
+            <xs:maxInclusive value="200000"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="slownaWartoscType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NIEZNANY"/>
+            <xs:enumeration value="REKORD"/>
+            <xs:enumeration value="BRAK DANYCH"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="rozmiarUnion">
+        <xs:union memberTypes="cyfrowaWartoscType slownaWartoscType"/>
+    </xs:simpleType>
+
     <xs:simpleType name="rodzajType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="ryba drapieżna"/>
@@ -197,6 +215,7 @@
             <xs:enumeration value="biała planktonożerna"/>
             <xs:enumeration value="ryba wszystkożerna"/>
             <xs:enumeration value="ryba wędrowna"/>
+            <xs:enumeration value="ryba morska"/>
         </xs:restriction>
     </xs:simpleType>
 
@@ -377,24 +396,3 @@
     </xs:simpleType> 
 
 </xs:schema>
-
-<!--
-        UNION EXAMPLE
-        <xs:simpleType name="jednostkaType">
-            <xs:restriction base="xs:integer">
-            <xs:minInclusive value="1"/>
-            <xs:maxInclusive value="200"/>
-            </xs:restriction>
-        </xs:simpleType>
-        <xs:simpleType name="opisType">
-            <xs:restriction base="xs:string">
-            <xs:enumeration value="NIEZNANY"/>
-            <xs:enumeration value="REKORD"/>
-            <xs:enumeration value="BRAK DANYCH"/>
-            </xs:restriction>
-        </xs:simpleType>
-
-        <xs:simpleType name="rozmiarUnion">
-            <xs:union memberTypes="jednostkaType opisType"/>
-        </xs:simpleType>
-        -->
