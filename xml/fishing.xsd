@@ -397,11 +397,4 @@
         <xs:simpleType name="rozmiarUnion">
             <xs:union memberTypes="jednostkaType opisType"/>
         </xs:simpleType>
-
-        <xs:simpleType name="WiekType">
-        <xs:restriction base="xs:integer">
-            <xs:minInclusive value="1"/>
-            <xs:maxInclusive value="120"/>
-        </xs:restriction>
-        </xs:simpleType>  DLA KILO RYB
         -->

@@ -22,9 +22,9 @@ xsi:noNamespaceSchemaLocation="fishing.xsd">
 
             <polowy>
                 <polow data="2025-07-12" miejsce="Jezioro Żarnowieckie" pogoda="słoneczna">
-                    <gatunek rodzaj="drapieżna">Szczupak</gatunek>
-                    <dlugosc jednostka="cm">68</dlugosc>
-                    <waga jednostka="kg">2.5</waga>
+                    <gatunek rodzaj="ryba drapieżna">Szczupak</gatunek>
+                    <dlugoscNajwiekszejRyby jednostka="cm" gatunek="Szczupak">68</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="kg" gatunek="Szczupak">2.5</wagaNajwiekszejRyby>
                     <zdjecie src="images/szczupak1.jpg" opis="Pierwszy połów lata"/>
                     <lowisko>
                         <jezioro link="https://pl.wikipedia.org/wiki/Jezioro_%C5%BBarnowieckie">Jezioro Żarnowieckie</jezioro>
@@ -38,8 +38,8 @@ xsi:noNamespaceSchemaLocation="fishing.xsd">
 
                 <polow data="2025-08-02" miejsce="Rzeka Wisła" pogoda="pochmurna">
                     <gatunek rodzaj="ryba drapieżna">Sandacz</gatunek>
-                    <dlugosc jednostka="cm">54</dlugosc>
-                    <waga jednostka="kg">1.9</waga>
+                    <dlugoscNajwiekszejRyby jednostka="cm" gatunek="RYBA DRAPIEŻNA">54</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="kg" gatunek="RYBA DRAPIEŻNA">1.9</wagaNajwiekszejRyby>
                     <zdjecie src="images/sandacz1.jpg" opis="Sandacz z Wisły"/>
                     <lowisko>
                         <rzeka link="https://pl.wikipedia.org/wiki/Rzeka_Wis%C5%82a">Rzeka Wisła</rzeka>
@@ -52,8 +52,8 @@ xsi:noNamespaceSchemaLocation="fishing.xsd">
 
                 <polow data="2025-09-18" miejsce="Jezioro Łebsko" pogoda="wiatr">
                     <gatunek rodzaj="ryba biała">Okoń</gatunek>
-                    <dlugosc jednostka="cm">25</dlugosc>
-                    <waga jednostka="kg">0.3</waga>
+                    <dlugoscNajwiekszejRyby jednostka="cm" gatunek="Okoń">25</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="kg" gatunek="Okoń">0.3</wagaNajwiekszejRyby>
                     <zdjecie src="images/okon1.jpg" opis="Okoń z wrześniowego połowu"/>
                     <lowisko>
                         <morze link="https://pl.wikipedia.org/wiki/Morze_Bałtyckie">Morze Bałtyckie</morze>
@@ -83,7 +83,7 @@ xsi:noNamespaceSchemaLocation="fishing.xsd">
             </sprzet>
             <polowy>
                 <polow data="2025-06-20" miejsce="Jezioro Druzno" pogoda="deszczowa">
-                    <gatunek rodzaj="biała ryba">Leszcz</gatunek>
+                    <gatunek rodzaj="ryba biała">Leszcz</gatunek>
                     <dlugoscNajwiekszejRyby jednostka="cm" gatunek="Leszcz">33</dlugoscNajwiekszejRyby>
                     <wagaNajwiekszejRyby jednostka="kg" gatunek="Leszcz">0.7</wagaNajwiekszejRyby>
                     <zdjecie src="images/leszcz.jpg" opis="Połów w deszczu"/>
@@ -116,9 +116,9 @@ xsi:noNamespaceSchemaLocation="fishing.xsd">
             </sprzet>
             <polowy>
                 <polow data="2025-07-01" miejsce="Rzeka Odra" pogoda="słoneczna">
-                    <gatunek rodzaj="drapieżna">Sum</gatunek>
-                    <dlugosc jednostka="cm">105</dlugosc>
-                    <waga jednostka="kg">12.0</waga>
+                    <gatunek rodzaj="ryba drapieżna">Sum</gatunek>
+                    <dlugoscNajwiekszejRyby jednostka="cm" gatunek="sum">105</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="kg" gatunek="sum">12.0</wagaNajwiekszejRyby>
                     <zdjecie src="images/sum.jpg" opis="Rekordowy sum z Odry"/>
                     <lowisko>
                         <rzeka link="https://pl.wikipedia.org/wiki/Rzeka_Odra">Rzeka Odra</rzeka>
