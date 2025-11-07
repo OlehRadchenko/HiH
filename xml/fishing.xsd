@@ -4,7 +4,7 @@
     <xs:element name="wedkarstwo" type="wedkarstwoType"/>
     <xs:attribute name="kraj" type="xs:string"/>
     <xs:element name="wedkarz" type="wedkarzType"/>
-    
+
     <xs:group name="daneGroup">
         <xs:sequence>
             <xs:element name="imie">
@@ -67,7 +67,6 @@
             <xs:element ref="wedkarz" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute ref="kraj" use="required"/>
-        <xs:attribute name="rok" type="xs:gYear" use="required"/>
         <xs:attribute name="liczba" type="xs:positiveInteger" use="required"/>
     </xs:complexType>
 
@@ -85,20 +84,20 @@
             <xs:element name="wedka">
                 <xs:complexType>
                     <xs:attribute name="typ" type="xs:string" use="required"/>
-                    <xs:attribute name="marka" type="xs:string" use="required"/>
+                    <xs:attribute name="marka" type="xs:string"/>
                     <xs:attribute name="dlugosc" type="xs:string" use="required"/>
                 </xs:complexType>
             </xs:element>
             <xs:element name="kolowrotek">
                 <xs:complexType>
                     <xs:attribute name="marka" type="xs:string" use="required"/>
-                    <xs:attribute name="model" type="xs:string" use="required"/>
+                    <xs:attribute name="model" type="xs:string"/>
                 </xs:complexType>
             </xs:element>
             <xs:element name="zylka">
                 <xs:complexType>
                     <xs:attribute name="grubosc" type="xs:string" use="required"/>
-                    <xs:attribute name="wytrzymalosc" type="xs:string" use="required"/>
+                    <xs:attribute name="wytrzymalosc" type="xs:string"/>
                 </xs:complexType>
             </xs:element>
         </xs:all>
@@ -108,8 +107,8 @@
         <xs:choice maxOccurs="unbounded">
             <xs:element name="polow" maxOccurs="unbounded">
                 <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="gatunek" maxOccurs="unbounded">
+                    <xs:choice maxOccurs="unbounded"> <!-- ALBO LEPIEJ SEQUENCE? -->
+                        <xs:element name="gatunek">
                             <xs:complexType>
                                 <xs:simpleContent>
                                     <xs:extension base="xs:string">
@@ -118,7 +117,26 @@
                                 </xs:simpleContent>
                             </xs:complexType>
                         </xs:element>
-                        <!-- TU TRZEBA DOROBIĆ ŁATWE RZECZY -->
+                        <xs:element name="dlugoscNajwiekszejRyby">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:positiveInteger">
+                                        <xs:attribute name="jednostka" type="jednostkaDlugosciType" use="required"/>
+                                        <xs:attribute name="gatunek" type="xs:string" use="required"/>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="wagaNajwiekszejRyby">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:decimal">
+                                        <xs:attribute name="jednostka" type="jednostkaWagiType" use="required"/>
+                                        <xs:attribute name="gatunek" type="xs:string" use="required"/>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
                         <xs:element name="zdjecie" maxOccurs="unbounded">
                             <xs:complexType>
                                 <xs:attribute name="src" type="xs:string" use="required"/>
@@ -127,7 +145,7 @@
                         </xs:element>
                         <xs:element name="lowisko" type="lowiskoType" maxOccurs="1"/>
                         <xs:element name="opisPolowu" type="opisType" maxOccurs="1"/>
-                    </xs:sequence>
+                    </xs:choice>
                     <xs:attribute name="data" type="xs:date" use="required"/>
                     <xs:attribute name="miejsce" type="xs:string" use="required"/>
                     <xs:attribute name="pogoda" type="xs:string"/>
@@ -182,11 +200,35 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <xs:simpleType name="jednostkaWagiType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mg"/>
+            <xs:enumeration value="g"/>
+            <xs:enumeration value="dag"/>
+            <xs:enumeration value="kg"/>
+            <xs:enumeration value="t"/>
+            <xs:enumeration value="lb"/>
+            <xs:enumeration value="oz"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="jednostkaDlugosciType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mm"/>
+            <xs:enumeration value="cm"/>
+            <xs:enumeration value="m"/>
+            <xs:enumeration value="km"/>
+            <xs:enumeration value="inch"/>
+            <xs:enumeration value="ft"/>
+            <xs:enumeration value="yd"/>
+        </xs:restriction>
+    </xs:simpleType>
+
     <xs:complexType name="opisType" mixed="true">
-        <xs:sequence>
+        <xs:choice maxOccurs="unbounded">
             <xs:element name="miejsce" type="xs:string" minOccurs="0"/>
             <xs:element name="gatunek" type="xs:string" minOccurs="0"/>
-        </xs:sequence>
+        </xs:choice>
     </xs:complexType>
 
     <xs:simpleType name="doswiadczenieType">
@@ -264,6 +306,7 @@
             </xs:element>
         </xs:all>
         <xs:attribute ref="kraj" use="required"/>
+        <xs:attribute name="rok" type="xs:gYear" use="required"/>
     </xs:complexType>
 
     <xs:complexType name="organizatorType">
