@@ -2,7 +2,7 @@
 <wedkarstwo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:noNamespaceSchemaLocation="fishing.xsd">
 
-    <wedkarze kraj="Polska" liczba="3"><!-- x3 -->
+    <wedkarze kraj="Polska" liczba="3">
         <wedkarz id="w1" doswiadczenie="średniozaawansowany" klub="Koło Gdańskie">
             <dane>
                 <imie>Oleh</imie>
