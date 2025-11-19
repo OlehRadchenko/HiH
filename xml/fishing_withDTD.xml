@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wedkarstwo SYSTEM "fishing.dtd">
+<wedkarstwo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <wedkarze kraj="Polska" liczba="3">
+        <wedkarz id="w1" doswiadczenie="średniozaawansowany" klub="Koło Gdańskie">
+            <dane>
+                <imie>Oleh</imie>
+                <nazwisko>Radchenko</nazwisko>
+                <wiek>19 lat</wiek>
+                <kontakt>
+                    <email>oleh.radchenko@example.com</email>
+                    <telefon>+48 123 456 789</telefon>
+                </kontakt>
+            </dane>
+
+            <sprzet>
+                <wedka typ="spinning" marka="Shimano" dlugosc="2.7m"/>
+                <kolowrotek marka="Daiwa" model="Revros 2500"/>
+                <zylka grubosc="0.20mm" wytrzymalosc="6kg"/>
+            </sprzet>
+
+            <polowy>
+                <polow data="2025-07-12" miejsce="Jezioro Żarnowieckie" pogoda="słoneczna">
+                    <gatunek rodzaj="ryba drapieżna">Szczupak</gatunek>
+                    <dlugoscNajwiekszejRyby jednostka="cm" gatunek="Szczupak">68</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="kg" gatunek="Szczupak">2.5</wagaNajwiekszejRyby>
+                    <zdjecie src="images/szczupak1.jpg" opis="Pierwszy połów lata"/>
+                    <lowisko>
+                        <jezioro link="https://pl.wikipedia.org/wiki/Jezioro_%C5%BBarnowieckie">Jezioro Żarnowieckie</jezioro>
+                    </lowisko>
+                    <opisPolowu> Wczoraj złowiłem pięknego 
+                        <gatunek>szczupaka</gatunek> 
+                        na jeziorze
+                        <miejsce>Żarnowieckie</miejsce>.
+                    </opisPolowu>
+                </polow>
+
+                <polow data="2025-08-02" miejsce="Rzeka Wisła" pogoda="pochmurna">
+                    <gatunek rodzaj="ryba drapieżna">Sandacz</gatunek>
+                    <dlugoscNajwiekszejRyby>BRAK DANYCH</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby>BRAK DANYCH</wagaNajwiekszejRyby>
+                    <zdjecie src="images/sandacz1.jpg" opis="Sandacz z Wisły"/>
+                    <lowisko>
+                        <rzeka link="https://pl.wikipedia.org/wiki/Rzeka_Wis%C5%82a">Rzeka Wisła</rzeka>
+                    </lowisko>
+                    <opisPolowu> Podczas ostatniego wypadu na 
+                        <miejsce>Wisłę</miejsce> 
+                        udało mi się złowić <gatunek>sandacza</gatunek> o długości 54cm.
+                    </opisPolowu>
+                </polow>
+
+                <polow data="2025-09-18" miejsce="Jezioro Łebsko" pogoda="wiatr">
+                    <gatunek rodzaj="ryba biała">Okoń</gatunek>
+                    <dlugoscNajwiekszejRyby jednostka="cm" gatunek="Okoń">25</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="kg" gatunek="Okoń">0.3</wagaNajwiekszejRyby>
+                    <zdjecie src="images/okon1.jpg" opis="Okoń z wrześniowego połowu"/>
+                    <lowisko>
+                        <morze link="https://pl.wikipedia.org/wiki/Morze_Bałtyckie">Morze Bałtyckie</morze>
+                    </lowisko>
+                    <opisPolowu> We wrześniu byłem na 
+                        <miejsce>Łebsku</miejsce> 
+                        i złowiłem kilka ładnych <gatunek>okoni</gatunek>.
+                    </opisPolowu>
+                </polow>
+            </polowy>
+        </wedkarz>
+
+        <wedkarz id="w2" doswiadczenie="początkujący" klub="Koło Warszawskie">
+            <dane>
+                <imie>Anna</imie>
+                <nazwisko>Kowalska</nazwisko>
+                <wiek>23 lata</wiek>
+                <kontakt>
+                    <email>anna.kowalska@example.com</email>
+                    <telefon>+48 123 456 791</telefon>
+                </kontakt>
+            </dane>
+            <sprzet>
+                <wedka typ="spławik" marka="Mikado" dlugosc="3.6m"/>
+                <kolowrotek marka="Okuma" model="Trio 30"/>
+                <zylka grubosc="0.18mm" wytrzymalosc="5kg"/>
+            </sprzet>
+            <polowy>
+                <polow data="2025-06-20" miejsce="Jezioro Druzno" pogoda="deszczowa">
+                    <gatunek rodzaj="ryba biała">Leszcz</gatunek>
+                    <dlugoscNajwiekszejRyby jednostka="cm" gatunek="Leszcz">33</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="kg" gatunek="Leszcz">REKORD</wagaNajwiekszejRyby>
+                    <zdjecie src="images/leszcz.jpg" opis="Połów w deszczu"/>
+                    <lowisko>
+                        <jezioro link="https://pl.wikipedia.org/wiki/Jezioro_Druzno">Jezioro Druzno</jezioro>
+                    </lowisko>
+                    <opisPolowu> Wczoraj złowiłem pięknego 
+                        <gatunek>leszcza</gatunek> 
+                        na jeziorze
+                        <miejsce>Druzno</miejsce>.
+                    </opisPolowu>
+                </polow>
+            </polowy>
+        </wedkarz>
+
+        <wedkarz id="w3" doswiadczenie="ekspert" klub="Koło Poznańskie">
+            <dane>
+                <imie>Marek</imie>
+                <nazwisko>Nowak</nazwisko>
+                <wiek>35 lat</wiek>
+                <kontakt>
+                    <email>marek.nowak@example.com</email>
+                    <telefon>+48 123 456 790</telefon>
+                </kontakt>
+            </dane>
+            <sprzet>
+                <wedka typ="gruntowa" marka="Dragon" dlugosc="3.9m"/>
+                <kolowrotek marka="Penn" model="Battle III 4000"/>
+                <zylka grubosc="0.25mm" wytrzymalosc="8kg"/>
+            </sprzet>
+            <polowy>
+                <polow data="2025-07-01" miejsce="Rzeka Odra" pogoda="słoneczna">
+                    <gatunek rodzaj="ryba drapieżna">Sum</gatunek>
+                    <dlugoscNajwiekszejRyby jednostka="cm" gatunek="sum">REKORD</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="kg" gatunek="sum">12.0</wagaNajwiekszejRyby>
+                    <zdjecie src="images/sum.jpg" opis="Rekordowy sum z Odry"/>
+                    <lowisko>
+                        <rzeka link="https://pl.wikipedia.org/wiki/Rzeka_Odra">Rzeka Odra</rzeka>
+                    </lowisko>
+                    <opisPolowu> Podczas ostatniego wypadu na 
+                        <miejsce>Odrę</miejsce> 
+                        udało mi się złowić <gatunek>suma</gatunek> o długości 105cm.
+                    </opisPolowu>
+                </polow>
+            </polowy>
+        </wedkarz>
+    </wedkarze>
+
+    <zawody kraj="Polska" rok="2025">
+        <organizator nazwa="Koło Wędkarskie Gdańsk" kontakt="+48577070237"/>
+    
+        <uczestnicy>
+            <uczestnik id="w1" doswiadczenie="średniozaawansowany" klub="Koło Gdańskie">
+                <imie>Oleh</imie>
+                <nazwisko>Radchenko</nazwisko>
+                <wiek>19 lat</wiek>
+            </uczestnik>
+            <uczestnik id="w2" doswiadczenie="początkujący" klub="Koło Warszawskie">
+                <imie>Jan</imie>
+                <nazwisko>Kowalski</nazwisko>
+                <wiek>42 lata</wiek>
+            </uczestnik>
+        </uczestnicy>
+
+        <wyniki>
+            <pozycja miejsce="1" punkty="1540">
+                <uczestnikRef id="w2"/>
+                <zlowioneRyby>
+                    sandacz okoń płoć
+                </zlowioneRyby>
+            </pozycja>
+            <pozycja miejsce="2" punkty="980">
+                <uczestnikRef id="w1"/>
+                <zlowioneRyby>
+                    szczupak leszcz okoń
+                </zlowioneRyby>
+            </pozycja>
+        </wyniki>
+
+        <galeria>
+            <zdjecie src="images/start_zawodow.jpg" opis="Rozpoczęcie zawodów"/>
+            <zdjecie src="images/zwyciezca.jpg" opis="Zwycięzca z trofeum"/>
+            <zdjecie src="images/ryba_dnia.jpg" opis="Największa ryba zawodów"/>
+        </galeria>
+
+        <linki>
+            <link typ="regulamin">https://pzw.pl/regulamin_zawody</link>
+            <link typ="galeria">https://wedkarzegdansk.pl/galeria</link>
+            <link typ="kontakt">https://wedkarzegdansk.pl/kontakt</link>
+        </linki>
+    </zawody>
+
+    <wedkarze kraj="USA" liczba="3">
+        <wedkarz id="w4" doswiadczenie="zaawansowany" klub="Texas Anglers Club">
+            <dane>
+                <imie>John</imie>
+                <nazwisko>Smith</nazwisko>
+                <wiek>42 lata</wiek>
+                <kontakt>
+                    <email>john.smith@example.com</email>
+                </kontakt>
+            </dane>
+            <sprzet>
+                <wedka typ="casting" marka="Abu Garcia" dlugosc="2.1m"/>
+                <kolowrotek marka="Shimano" model="Curado 200"/>
+                <zylka grubosc="0.25mm" wytrzymalosc="9kg"/>
+            </sprzet>
+            <polowy>
+                <polow data="2025-07-04" miejsce="Lake Fork" pogoda="słoneczna">
+                    <gatunek rodzaj="ryba drapieżna">Bass</gatunek>
+                    <dlugoscNajwiekszejRyby jednostka="ft" gatunek="Bass">53</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="lb" gatunek="Bass">3.6</wagaNajwiekszejRyby>
+                    <zdjecie src="images/bass1.jpg" opis="Bass z Texasu"/>
+                    <lowisko>
+                        <jezioro link="https://en.wikipedia.org/wiki/Lake_Fork_Reservoir">Lake Fork</jezioro>
+                    </lowisko>
+                    <opisPolowu> Świetny dzień nad <miejsce>Lake Fork</miejsce> – złowiłem potężnego <gatunek>bassa</gatunek>! </opisPolowu>
+                </polow>
+            </polowy>
+        </wedkarz>
+
+        <wedkarz id="w5" doswiadczenie="początkujący" klub="Florida Fishermen">
+            <dane>
+                <imie>Emily</imie>
+                <nazwisko>Johnson</nazwisko>
+                <wiek>27 lat</wiek>
+                <kontakt>
+                    <email>emily.johnson@example.com</email>
+                </kontakt>
+            </dane>
+            <sprzet>
+                <wedka typ="spinning" marka="Daiwa" dlugosc="2.4m"/>
+                <kolowrotek marka="Penn" model="Clash 2500"/>
+                <zylka grubosc="0.18mm" wytrzymalosc="5kg"/>
+            </sprzet>
+            <polowy>
+                <polow data="2025-08-14" miejsce="Florida Keys" pogoda="pochmurna">
+                    <gatunek rodzaj="ryba morska">Snapper</gatunek>
+                    <dlugoscNajwiekszejRyby jednostka="ft" gatunek="Snapper">28</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="lb" gatunek="Snapper">0.8</wagaNajwiekszejRyby>
+                    <zdjecie src="images/snapper.jpg" opis="Połów z oceanu"/>
+                    <lowisko>
+                        <morze link="https://en.wikipedia.org/wiki/Florida_Keys">Atlantic Ocean</morze>
+                    </lowisko>
+                    <opisPolowu> Pierwszy połów w oceanie – <gatunek>snapper</gatunek> był niesamowity! </opisPolowu>
+                </polow>
+            </polowy>
+        </wedkarz>
+
+        <wedkarz id="w6" doswiadczenie="ekspert" klub="California Carp Team">
+            <dane>
+                <imie>Michael</imie>
+                <nazwisko>Brown</nazwisko>
+                <wiek>38 lat</wiek>
+                <kontakt>
+                    <email>michael.brown@example.com</email>
+                </kontakt>
+            </dane>
+            <sprzet>
+                <wedka typ="gruntowa" marka="Fox" dlugosc="3.6m"/>
+                <kolowrotek marka="Shimano" model="Baitrunner 4000"/>
+                <zylka grubosc="0.30mm" wytrzymalosc="10kg"/>
+            </sprzet>
+            <polowy>
+                <polow data="2025-09-10" miejsce="Lake Castaic" pogoda="słoneczna">
+                    <gatunek rodzaj="ryba biała">Karp</gatunek>
+                    <dlugoscNajwiekszejRyby jednostka="ft" gatunek="Karp">71</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="lb" gatunek="Karp">6.2</wagaNajwiekszejRyby>
+                    <zdjecie src="images/karp_usa.jpg" opis="Duży karp z Kalifornii"/>
+                    <lowisko>
+                        <jezioro link="https://en.wikipedia.org/wiki/Castaic_Lake">Castaic Lake</jezioro>
+                    </lowisko>
+                    <opisPolowu> Udało mi się złowić <gatunek>karpia</gatunek> w <miejsce>Lake Castaic</miejsce> – rekordowy dzień! </opisPolowu>
+                </polow>
+            </polowy>
+        </wedkarz>
+    </wedkarze>
+
+    <wedkarze kraj="Japonia" liczba="3">
+        <wedkarz id="w7" doswiadczenie="profesjonalista" klub="Tokyo River Masters">
+            <dane>
+                <imie>Hiroshi</imie>
+                <nazwisko>Tanaka</nazwisko>
+                <wiek>45 lat</wiek>
+                <kontakt>
+                    <email>hiroshi.tanaka@example.jp</email>
+                </kontakt>
+            </dane>
+            <sprzet>
+                <wedka typ="spinning" marka="Shimano" dlugosc="2.5m"/>
+                <kolowrotek marka="Daiwa" model="Luvias 2500"/>
+                <zylka grubosc="0.22mm" wytrzymalosc="6kg"/>
+            </sprzet>
+            <polowy>
+                <polow data="2025-06-15" miejsce="Rzeka Tone" pogoda="słoneczna">
+                    <gatunek rodzaj="ryba drapieżna">Trout</gatunek>
+                    <dlugoscNajwiekszejRyby jednostka="cm" gatunek="Trout">47</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="kg" gatunek="Trout">1.9</wagaNajwiekszejRyby>
+                    <zdjecie src="images/trout_jp.jpg" opis="Pstrąg z Japonii"/>
+                    <lowisko>
+                        <rzeka link="https://en.wikipedia.org/wiki/Tone_River">Tone River</rzeka>
+                    </lowisko>
+                    <opisPolowu> Idealne warunki na <miejsce>Rzece Tone</miejsce>, pstrągi brały znakomicie! </opisPolowu>
+                </polow>
+            </polowy>
+        </wedkarz>
+
+        <wedkarz id="w8" doswiadczenie="średniozaawansowany" klub="Osaka Sea Anglers">
+            <dane>
+                <imie>Yuki</imie>
+                <nazwisko>Nakamura</nazwisko>
+                <wiek>31 lat</wiek>
+                <kontakt>
+                    <email>yuki.nakamura@example.jp</email>
+                </kontakt>
+            </dane>
+            <sprzet>
+                <wedka typ="morska" marka="Major Craft" dlugosc="2.7m"/>
+                <kolowrotek marka="Shimano" model="Stella 3000"/>
+                <zylka grubosc="0.20mm" wytrzymalosc="7kg"/>
+            </sprzet>
+            <polowy>
+                <polow data="2025-08-21" miejsce="Morze Japońskie" pogoda="pochmurna">
+                    <gatunek rodzaj="ryba morska">Mackerel</gatunek>
+                    <dlugoscNajwiekszejRyby jednostka="cm" gatunek="Mackerel">35</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="kg" gatunek="Mackerel">0.5</wagaNajwiekszejRyby>
+                    <zdjecie src="images/mackerel_jp.jpg" opis="Makrela z Osaki"/>
+                    <lowisko>
+                        <morze link="https://en.wikipedia.org/wiki/Sea_of_Japan">Morze Japońskie</morze>
+                    </lowisko>
+                    <opisPolowu> Złowiłem kilka <gatunek>makreli</gatunek> u wybrzeży <miejsce>Osaki</miejsce>. </opisPolowu>
+                </polow>
+            </polowy>
+        </wedkarz>
+
+        <wedkarz id="w9" doswiadczenie="początkujący" klub="Kyoto Lakes Club">
+            <dane>
+                <imie>Aya</imie>
+                <nazwisko>Suzuki</nazwisko>
+                <wiek>22 lata</wiek>
+                <kontakt>
+                    <email>aya.suzuki@example.jp</email>
+                </kontakt>
+            </dane>
+            <sprzet>
+                <wedka typ="spławik" marka="Daiwa" dlugosc="3.0m"/>
+                <kolowrotek marka="Shimano" model="Sedona 1000"/>
+                <zylka grubosc="0.16mm" wytrzymalosc="4kg"/>
+            </sprzet>
+            <polowy>
+                <polow data="2025-07-30" miejsce="Jezioro Biwa" pogoda="deszczowa">
+                    <gatunek rodzaj="ryba biała">Carp</gatunek>
+                    <dlugoscNajwiekszejRyby jednostka="cm" gatunek="Carp">48</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="kg" gatunek="Carp">2.8</wagaNajwiekszejRyby>
+                    <zdjecie src="images/carp_jp.jpg" opis="Karp z Biwa"/>
+                    <lowisko>
+                        <jezioro link="https://en.wikipedia.org/wiki/Lake_Biwa">Jezioro Biwa</jezioro>
+                    </lowisko>
+                    <opisPolowu> Mój pierwszy <gatunek>karp</gatunek> złowiony w <miejsce>Jeziorze Biwa</miejsce>. </opisPolowu>
+                </polow>
+            </polowy>
+        </wedkarz>
+    </wedkarze>
+
+    <wedkarze kraj="Norwegia" liczba="3">
+        <wedkarz id="w10" doswiadczenie="ekspert" klub="Oslo Fjord Hunters">
+            <dane>
+                <imie>Lars</imie>
+                <nazwisko>Olsen</nazwisko>
+                <wiek>40 lat</wiek>
+                <kontakt>
+                    <email>lars.olsen@example.no</email>
+                </kontakt>
+            </dane>
+            <sprzet>
+                <wedka typ="morska" marka="Abu Garcia" dlugosc="2.8m"/>
+                <kolowrotek marka="Shimano" model="Saragosa 5000"/>
+                <zylka grubosc="0.28mm" wytrzymalosc="12kg"/>
+            </sprzet>
+            <polowy>
+                <polow data="2025-07-09" miejsce="Oslofjord" pogoda="słoneczna">
+                    <gatunek rodzaj="ryba drapieżna">Dorsz</gatunek>
+                    <dlugoscNajwiekszejRyby jednostka="cm" gatunek="Dorsz">82</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="kg" gatunek="Dorsz">6.8</wagaNajwiekszejRyby>
+                    <zdjecie src="images/dorsz_no.jpg" opis="Dorsz z Oslofjordu"/>
+                    <lowisko>
+                        <morze link="https://en.wikipedia.org/wiki/Oslofjord">Oslofjord</morze>
+                    </lowisko>
+                    <opisPolowu> Udało się złowić dużego <gatunek>dorsza</gatunek> w <miejsce>Oslofjordzie</miejsce>. </opisPolowu>
+                </polow>
+            </polowy>
+        </wedkarz>
+
+        <wedkarz id="w11" doswiadczenie="średniozaawansowany" klub="Bergen River Team">
+            <dane>
+                <imie>Erik</imie>
+                <nazwisko>Johansen</nazwisko>
+                <wiek>29 lat</wiek>
+                <kontakt>
+                    <email>erik.johansen@example.no</email>
+                </kontakt>
+            </dane>
+            <sprzet>
+                <wedka typ="spinning" marka="Okuma" dlugosc="2.6m"/>
+                <kolowrotek marka="Daiwa" model="Legalis 2500"/>
+                <zylka grubosc="0.22mm" wytrzymalosc="7kg"/>
+            </sprzet>
+            <polowy>
+                <polow data="2025-08-05" miejsce="Rzeka Vosso" pogoda="wiatr">
+                    <gatunek rodzaj="ryba wędrowna">Łosoś</gatunek>
+                    <dlugoscNajwiekszejRyby jednostka="cm" gatunek="Łosoś">92</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="kg" gatunek="Łosoś">8.1</wagaNajwiekszejRyby>
+                    <zdjecie src="images/losos_no.jpg" opis="Łosoś z rzeki Vosso"/>
+                    <lowisko>
+                        <rzeka link="https://en.wikipedia.org/wiki/Vosso">Rzeka Vosso</rzeka>
+                    </lowisko>
+                    <opisPolowu> Rewelacyjny połów – złowiłem <gatunek>łososi</gatunek> w <miejsce>Rzece Vosso</miejsce>. </opisPolowu>
+                </polow>
+            </polowy>
+        </wedkarz>
+
+        <wedkarz id="w12" doswiadczenie="początkujący" klub="Trondheim Lakes">
+            <dane>
+                <imie>Ingrid</imie>
+                <nazwisko>Berg</nazwisko>
+                <wiek>25 lat</wiek>
+                <kontakt>
+                    <email>ingrid.berg@example.no</email>
+                </kontakt>
+            </dane>
+            <sprzet>
+                <wedka typ="spławik" marka="Daiwa" dlugosc="3.3m"/>
+                <kolowrotek marka="Penn" model="Pursuit 2500"/>
+                <zylka grubosc="0.18mm" wytrzymalosc="5kg"/>
+            </sprzet>
+            <polowy>
+                <polow data="2025-07-25" miejsce="Jezioro Selbusjøen" pogoda="pochmurna">
+                    <gatunek rodzaj="ryba biała">Płoć</gatunek>
+                    <dlugoscNajwiekszejRyby jednostka="cm" gatunek="Płoć">26</dlugoscNajwiekszejRyby>
+                    <wagaNajwiekszejRyby jednostka="kg" gatunek="Płoć">0.4</wagaNajwiekszejRyby>
+                    <zdjecie src="images/plac_no.jpg" opis="Płoć z jeziora Selbusjøen"/>
+                    <lowisko>
+                        <jezioro link="https://en.wikipedia.org/wiki/Selbusjøen">Jezioro Selbusjøen</jezioro>
+                    </lowisko>
+                    <opisPolowu> Na <miejsce>jeziorze Selbusjøen</miejsce> udało się złowić kilka <gatunek>płoci</gatunek>. </opisPolowu>
+                </polow>
+            </polowy>
+        </wedkarz>
+    </wedkarze>
+
+</wedkarstwo>
