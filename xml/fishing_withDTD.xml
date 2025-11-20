@@ -141,7 +141,7 @@
                 <nazwisko>Radchenko</nazwisko>
                 <wiek>19 lat</wiek>
             </uczestnik>
-            <uczestnik id="w2" doswiadczenie="początkujący" klub="Koło Warszawskie">
+            <uczestnik id="w6" doswiadczenie="początkujący" klub="Koło Warszawskie">
                 <imie>Jan</imie>
                 <nazwisko>Kowalski</nazwisko>
                 <wiek>42 lata</wiek>

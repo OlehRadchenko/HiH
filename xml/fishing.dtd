@@ -1,0 +1,145 @@
+<!ENTITY % EXPERIENCES "początkujący | średniozaawansowany | zaawansowany | ekspert | profesjonalista">
+<!ENTITY % LOWISKO_CHOICE "rzeka | jezioro | morze">
+
+<!ELEMENT wedkarstwo ( (wedkarze | zawody)* )>
+<!ATTLIST wedkarstwo
+    xmlns:xsi CDATA #IMPLIED
+    xsi:noNamespaceSchemaLocation CDATA #IMPLIED
+>
+
+<!ELEMENT wedkarze (wedkarz+)>
+<!ATTLIST wedkarze
+    kraj   CDATA  #REQUIRED
+    liczba CDATA  "0"
+>
+
+<!ELEMENT wedkarz (dane, sprzet?, polowy?)>
+<!ATTLIST wedkarz
+    id          ID    #REQUIRED
+    doswiadczenie (%EXPERIENCES;) "początkujący"
+    klub        CDATA "brak"
+>
+
+<!ELEMENT dane (imie, nazwisko, wiek, kontakt?)>
+<!ELEMENT imie (#PCDATA)>
+<!ELEMENT nazwisko (#PCDATA)>
+<!ELEMENT wiek (#PCDATA)>
+
+<!ELEMENT kontakt (email, telefon?)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT telefon (#PCDATA)>
+
+<!ELEMENT sprzet (wedka, kolowrotek, zylka?)>
+
+<!ELEMENT wedka EMPTY>
+<!ATTLIST wedka
+    typ     CDATA #REQUIRED
+    marka   CDATA "nieznana"
+    dlugosc CDATA #IMPLIED
+>
+
+<!ELEMENT kolowrotek EMPTY>
+<!ATTLIST kolowrotek
+    marka CDATA "nieznana"
+    model CDATA #IMPLIED
+>
+
+<!ELEMENT zylka EMPTY>
+<!ATTLIST zylka
+    grubosc      CDATA #REQUIRED
+    wytrzymalosc CDATA "nieokreslona"
+>
+
+<!ELEMENT polowy (polow+)>
+
+<!ELEMENT polow (gatunek, dlugoscNajwiekszejRyby?, wagaNajwiekszejRyby?, zdjecie*, lowisko?, opisPolowu?)>
+<!ATTLIST polow
+    data    CDATA #REQUIRED
+    miejsce CDATA #IMPLIED
+    pogoda  CDATA "nieznana"
+>
+
+<!ELEMENT gatunek (#PCDATA)>
+<!ATTLIST gatunek
+    rodzaj CDATA #IMPLIED
+>
+
+<!ELEMENT dlugoscNajwiekszejRyby (#PCDATA)>
+<!ATTLIST dlugoscNajwiekszejRyby
+    jednostka (mm | cm | m | ft) "cm"
+    gatunek CDATA #IMPLIED
+>
+
+<!ELEMENT wagaNajwiekszejRyby (#PCDATA)>
+<!ATTLIST wagaNajwiekszejRyby
+    jednostka (g | kg | lb) "kg"
+    gatunek CDATA #IMPLIED
+>
+
+<!ELEMENT zdjecie EMPTY>
+<!ATTLIST zdjecie
+    src  CDATA #REQUIRED
+    opis CDATA "brak opisu"
+>
+
+<!ELEMENT lowisko ( %LOWISKO_CHOICE; )>
+
+<!ELEMENT rzeka (#PCDATA)>
+<!ATTLIST rzeka
+    link CDATA #IMPLIED
+>
+
+<!ELEMENT jezioro (#PCDATA)>
+<!ATTLIST jezioro
+    link CDATA #IMPLIED
+>
+
+<!ELEMENT morze (#PCDATA)>
+<!ATTLIST morze
+    link CDATA #IMPLIED
+>
+
+<!ELEMENT opisPolowu (#PCDATA | miejsce | gatunek)*>
+<!ELEMENT miejsce (#PCDATA)>
+
+<!ELEMENT zawody (organizator, uczestnicy?, wyniki?, galeria?, linki?)>
+<!ATTLIST zawody
+    kraj CDATA "Polska"
+    rok  CDATA #REQUIRED
+>
+
+<!ELEMENT organizator EMPTY>
+<!ATTLIST organizator
+    nazwa CDATA #REQUIRED
+    kontakt CDATA #IMPLIED
+>
+
+<!ELEMENT uczestnicy (uczestnik+)>
+<!ELEMENT uczestnik (imie, nazwisko, wiek)>
+<!ATTLIST uczestnik
+    id IDREF #REQUIRED
+    doswiadczenie (%EXPERIENCES;) "początkujący"
+    klub CDATA "brak"
+>
+
+<!ELEMENT wyniki (pozycja+)>
+<!ELEMENT pozycja (uczestnikRef, zlowioneRyby?)>
+<!ATTLIST pozycja
+    miejsce CDATA #REQUIRED
+    punkty  CDATA #REQUIRED
+>
+
+<!ELEMENT uczestnikRef EMPTY>
+<!ATTLIST uczestnikRef
+    id IDREF #REQUIRED
+>
+
+<!ELEMENT zlowioneRyby (#PCDATA)>
+
+<!ELEMENT galeria (zdjecie+)>
+
+<!ELEMENT linki (link+)>
+<!ELEMENT link (#PCDATA)>
+<!ATTLIST link
+    typ (regulamin | galeria | kontakt | inne) "inne"
+>
