@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="fishing_reference.xslt"?>
-<wedkarstwo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml-stylesheet type="text/xsl" href="fishing.xslt"?>
+<wedkarstwo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" autor="Oleh Radchenko 211352">
 
     <wedkarze kraj="Polska" liczba="3">
         <wedkarz id="w1" doswiadczenie="średniozaawansowany" klub="Koło Gdańskie">
